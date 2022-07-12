@@ -1,0 +1,21 @@
+NAME: При поиске в Яндексе по запросу {TEST DATA} в результатах отображается текст
+TEST DATA:[
+        [JUnit /(вторые данные для этого теста (текст этого результат из поиска ))  team’s statement on the war in Ukraine. As human beings, we stand with Ukraine],
+        [TestNG /(вторые данные для этого теста (текст этого результат из поиска ))  is a testing framework inspired from JUnit and NUnit ]
+       ]
+PRIORITY: CRITICAL - насколько можно выкатить фичу если тест-кейс красный
+PRECONDITIONS:
+    - открыть браузер
+    - находимся на стартовой странице "url"
+STEPS:
+    1. В поле поиска ввести текст {TEST DATA[0]}
+    2. Нажать кнопку "Найти!"
+EXPECTED RESULT:
+    - В результатах отображается текст {TEST DATA[1]}
+ACTUAL RESULT:
+    - Если результат отличается от фатического  -то этот пункт превращает тест-кейс в баг-репорт
+
+
+
+
+

@@ -1,4 +1,4 @@
-package JUnit;
+package jUnit;
 
 import com.google.common.reflect.ClassPath;
 import org.junit.jupiter.api.Test;

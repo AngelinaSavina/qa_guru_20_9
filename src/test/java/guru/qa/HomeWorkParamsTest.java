@@ -9,15 +9,16 @@ import java.time.Duration;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byClassName;
+import static com.codeborne.selenide.Selectors.byName;
 import static com.codeborne.selenide.Selenide.*;
 
 @SuppressWarnings("ALL")
 public class HomeWorkParamsTest extends TestData {
 
-    SelenideElement searchInput = $("#link-search-input");
-    SelenideElement searchButton = $("button[type='submit']");
-    SelenideElement searResult = $(byClassName("p-book-title-link"));
-    SelenideElement fieldResult = $(byClassName("body"));
+//    SelenideElement searchInput = $(byName("query"));
+//    SelenideElement searchButton = $("button[type='submit']");
+//    SelenideElement searResult = $(byClassName("p-book-title-link"));
+//    SelenideElement fieldResult = $(byClassName("body"));
 
     @CsvSource(value = {
             "Код, Код цвета, Небесный голубой",
@@ -27,7 +28,9 @@ public class HomeWorkParamsTest extends TestData {
     void yaTestComplex(String searchData, String expectedResultFirst, String expectedResultSecond) {
         Selenide.open(url);
         searchInput.shouldBe(interactable).setValue(searchData);
+        System.out.println("2");
         searchButton.shouldBe(interactable, Duration.ofMillis(8000)).click();
+        System.out.println("3");
         searResult.shouldHave(text(expectedResultFirst), Duration.ofMillis(8000)).click();
         fieldResult.shouldHave(text(expectedResultSecond));
         Selenide.closeWindow();

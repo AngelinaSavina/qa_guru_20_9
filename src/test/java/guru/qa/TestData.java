@@ -1,16 +1,18 @@
 package guru.qa;
 
+import com.codeborne.selenide.SelenideElement;
+
 import java.util.Locale;
+
+import static com.codeborne.selenide.Selectors.byClassName;
+import static com.codeborne.selenide.Selectors.byName;
+import static com.codeborne.selenide.Selenide.$;
 
 public class TestData {
 
     String url = "https://www.mann-ivanov-ferber.ru";
-    //переменная поисковое поле
-    //переменная кнопка поиска
-    // переменная с обозначением элемента с типом искомого элемента книги
-    // переменная с кнопкой "Добавить в коризну"
-    // переменная с появлением модального окна
-    // переменная с полем ввода почты
-    // переменная с кнопкой "отправить на почту"
-    ///переменная с элементом, содержащим текст
+    SelenideElement searchInput = $(byName("query"));
+    SelenideElement searchButton = $("button[type='submit']");
+    SelenideElement searResult = $(byClassName("p-book-title-link"));
+    SelenideElement fieldResult = $(byClassName("body"));
 }

@@ -1,24 +1,15 @@
 package guru.qa;
 
 import com.codeborne.selenide.Selenide;
-import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
 import java.time.Duration;
 
 import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Selectors.byClassName;
-import static com.codeborne.selenide.Selectors.byName;
-import static com.codeborne.selenide.Selenide.*;
 
 @SuppressWarnings("ALL")
 public class HomeWorkParamsTest extends TestData {
-
-//    SelenideElement searchInput = $(byName("query"));
-//    SelenideElement searchButton = $("button[type='submit']");
-//    SelenideElement searResult = $(byClassName("p-book-title-link"));
-//    SelenideElement fieldResult = $(byClassName("body"));
 
     @CsvSource(value = {
             "Код, Код цвета, Небесный голубой",

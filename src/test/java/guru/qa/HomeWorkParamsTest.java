@@ -19,9 +19,7 @@ public class HomeWorkParamsTest extends TestData {
     void yaTestComplex(String searchData, String expectedResultFirst, String expectedResultSecond) {
         Selenide.open(url);
         searchInput.shouldBe(interactable).setValue(searchData);
-        System.out.println("2");
         searchButton.shouldBe(interactable, Duration.ofMillis(8000)).click();
-        System.out.println("3");
         searResult.shouldHave(text(expectedResultFirst), Duration.ofMillis(8000)).click();
         fieldResult.shouldHave(text(expectedResultSecond));
         Selenide.closeWindow();
